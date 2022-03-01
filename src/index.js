@@ -3,4 +3,10 @@ const elventShieldRecipe = {
   ironIngot: 1,
   refinedMoonstone: 4,
 };
-console.log(elventShieldRecipe);
+
+const test2 = {
+  ...elventShieldRecipe,
+  leather: 1,
+  refinedMoonstone: 3,
+};
+console.log(test2);
