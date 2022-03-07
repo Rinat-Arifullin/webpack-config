@@ -6,19 +6,29 @@ const elventShieldRecipe = {
     refinedMoonstone: 4,
   };
   
-const test2 = {
+const elventShieldRecipe2 = {
     ...elventShieldRecipe,
     leather: 1,
     refinedMoonstone: 3,
 };
 
 function Recipes() {
-    const [recipes, setRecipes] = useState(null)
+    const [recipes, setRecipes] = useState({})
+    const renderList = ()=>{
+        return <ul>
+            {Object.keys(recipes).map(key=>{
+                return <li>
+                    {`${key}: ${recipes[key]}`}
+                </li>
+            })}
+        </ul>
+    }
     return (
         <div>
+            
             <button onClick={()=>setRecipes(elventShieldRecipe)}>recipes 1</button>
-            <button onClick={()=>setRecipes(test2)}>recipes 1</button>
-            <p>{JSON.stringify(recipes)}</p>
+            <button onClick={()=>setRecipes(elventShieldRecipe2)}>recipes 2</button>
+            {renderList()}
         </div>
     )
 }
